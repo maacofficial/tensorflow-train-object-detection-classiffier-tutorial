@@ -11,4 +11,3 @@
 
 
 <h3>Statement</h3>
-<hr>
