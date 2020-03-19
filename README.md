@@ -99,8 +99,13 @@
 <p>2.7. Extract downloaded "TensorFlow-Object-Detection-API.zip" file to "C:\tensorflow1\models\research\object_detection\" folder.</p>
 
 <p>2.8. Finally your "object_detection" folder looks like this.</p>
+<div align="center"><img src="https://github.com/maacofficial/tensorflow-train-object-detection-classiffier-tutorial/blob/master/assets/repos.png" width="400" height="557">
+</div>
 
 
-
-<p>-Open your command prompt as administrator.</p>
-<p>-Than run this command: <code>conda create -n tensorflow1 pip python==3.5</code></p>
+<h3>3. Create and Set up Anaconda Virtual Environment</h3>
+<p>3.1 Open your command prompt as administrator.</p>
+<p>3.2 Than run this command: <code>conda create -n tensorflow1 pip python==3.5</code></p>
+<p>3.3 Install TensorFlow 1.5 version: <code>pip install --ignore-installed --upgrade tensorflow==1.5.0</code></p>
+<p> If you want to install TensorFlow GPU 1.5 version: <code>pip install --ignore-installed --upgrade tensorflow-gpu==1.5.0</code></p>
+<p>3.4 Install TensorFlow 1.5 version: <code>pip install --ignore-installed --upgrade tensorflow==1.5.0</code></p>
