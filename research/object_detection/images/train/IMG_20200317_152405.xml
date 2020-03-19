@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>IMG_20200317_152405.jpg</filename>
+	<path>C:\Users\mustafa\Desktop\train\IMG_20200317_152405.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>960</width>
+		<height>720</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>200TL</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>341</xmin>
+			<ymin>167</ymin>
+			<xmax>749</xmax>
+			<ymax>539</ymax>
+		</bndbox>
+	</object>
+</annotation>

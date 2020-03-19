@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>IMG_20200317_151332.jpg</filename>
+	<path>C:\Users\mustafa\Desktop\train\IMG_20200317_151332.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>720</width>
+		<height>960</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>5TL</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>249</xmin>
+			<ymin>428</ymin>
+			<xmax>471</xmax>
+			<ymax>815</ymax>
+		</bndbox>
+	</object>
+</annotation>
