@@ -1,4 +1,3 @@
-
 <h1>How to train own object detection classifier using TensorFlow on Windows 10</h1>
 
 
@@ -99,13 +98,29 @@
 <p>2.7. Extract downloaded "TensorFlow-Object-Detection-API.zip" file to "C:\tensorflow1\models\research\object_detection\" folder.</p>
 
 <p>2.8. Finally your "object_detection" folder looks like this.</p>
-<div align="center"><img src="https://github.com/maacofficial/tensorflow-train-object-detection-classiffier-tutorial/blob/master/assets/repos.png" width="400" height="557">
+<div><img src="https://github.com/maacofficial/tensorflow-train-object-detection-classiffier-tutorial/blob/master/assets/repos.png" width="400" height="557">
 </div>
 
 
 <h3>3. Create and Set up Anaconda Virtual Environment</h3>
 <p>3.1 Open your command prompt as administrator.</p>
-<p>3.2 Than run this command: <code>conda create -n tensorflow1 pip python==3.5</code></p>
-<p>3.3 Install TensorFlow 1.5 version: <code>pip install --ignore-installed --upgrade tensorflow==1.5.0</code></p>
-<p> If you want to install TensorFlow GPU 1.5 version: <code>pip install --ignore-installed --upgrade tensorflow-gpu==1.5.0</code></p>
-<p>3.4 Install TensorFlow 1.5 version: <code>pip install --ignore-installed --upgrade tensorflow==1.5.0</code></p>
+<p>3.2 Than run this command: <code>C:\>conda create -n tensorflow1 pip python==3.5</code></p>
+<p><code>C:\>conda activate tensorflow1</code></p>
+<p>3.3 Install TensorFlow 1.5 version: <code>C:\>pip install --ignore-installed --upgrade tensorflow==1.5.0</code></p>
+<p> If you want to install TensorFlow GPU 1.5 version: <code>C:\>pip install --ignore-installed --upgrade tensorflow-gpu==1.5.0</code></p>
+<p>3.4 Install TensorFlow 1.5 version: <code>C:\>pip install --ignore-installed --upgrade tensorflow==1.5.0</code></p>
+<p>3.5 Install necessary packages by running following commands;<p>
+<p><code>C:\>conda install -c anaconda protobuf</code><p>
+<p><code>C:\>pip install pillow lxml cython jupyter matplotlib pandas opencv-python</code><p>
+<p>3.6 Configure environment variable: 
+<pre><code>C:\>set PYTHONPATH=C:\tensorflow1\models;C:\tensorflow1\models\research;C:\tensorflow1\models\research\slim</code></pre><p>
+
+ 
+<h3>4. Compile protobufs and run setup.py</h3>
+In command prompt go to research folder by running:
+<pre><code>C:\>cd C:\tensorflow1\models\research</code></pre>
+
+Then run the following commands:
+<pre><code>protoc --python_out=. .\object_detection\protos\anchor_generator.proto .\object_detection\protos\argmax_matcher.proto .\object_detection\protos\bipartite_matcher.proto .\object_detection\protos\box_coder.proto .\object_detection\protos\box_predictor.proto .\object_detection\protos\eval.proto .\object_detection\protos\faster_rcnn.proto .\object_detection\protos\faster_rcnn_box_coder.proto .\object_detection\protos\grid_anchor_generator.proto .\object_detection\protos\hyperparams.proto .\object_detection\protos\image_resizer.proto .\object_detection\protos\input_reader.proto .\object_detection\protos\losses.proto .\object_detection\protos\matcher.proto .\object_detection\protos\mean_stddev_box_coder.proto .\object_detection\protos\model.proto .\object_detection\protos\optimizer.proto .\object_detection\protos\pipeline.proto .\object_detection\protos\post_processing.proto .\object_detection\protos\preprocessor.proto .\object_detection\protos\region_similarity_calculator.proto .\object_detection\protos\square_box_coder.proto .\object_detection\protos\ssd.proto .\object_detection\protos\ssd_anchor_generator.proto .\object_detection\protos\string_int_label_map.proto .\object_detection\protos\train.proto .\object_detection\protos\keypoint_box_coder.proto</code></pre>
+<pre><code>(tensorflow1) C:\tensorflow1\models\research>python setup.py build</code></pre>
+<pre><code>(tensorflow1) C:\tensorflow1\models\research>python setup.py install</code></pre>
