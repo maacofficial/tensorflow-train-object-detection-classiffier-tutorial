@@ -259,3 +259,5 @@ train_input_reader: {
 <h3>10. Using own object detection classifier</h3>
 <p>If you want to detect with webcam run "Object_detection_webcam.py" that is located in "C:\tensorflow1\models\research\object_detection" folder.Before running "Object_detection_webcam.py" file ,edit "NUM_CLASSES = 2" section. Finally run following command:</p>
 <pre><code>python Object_detection_webcam.py</code></pre>
+
+<h4>Dream until your dreams come true!!!</h4>
