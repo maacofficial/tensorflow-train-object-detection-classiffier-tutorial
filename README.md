@@ -134,6 +134,128 @@ In this step we should download "LabelImg" tool to label images from <a href="ht
 
 <h3>6. Generate training record</h3>
 
-First we should convert images xml data to csv. To do this:
+<p>First we should convert images xml data to csv. To do this:</p>
 <pre><code>(tensorflow1) C:\tensorflow1\models\research\object_detection>python xml_to_csv.py</code></pre>
 
+<p>After that, edit generate_tfrecord.py with a text editor. Change label map with your own label map.</p>
+
+
+<pre><code># TO-DO replace this with label map
+def class_text_to_int(row_label):
+    if row_label == '200TL':
+        return 1
+    elif row_label == '5TL':
+        return 2
+    else:
+        None</code></pre>
+ <p>TO:</p>
+ 
+ <pre><code># TO-DO replace this with label map
+def class_text_to_int(row_label):
+    if row_label == 'cat':
+        return 1
+    elif row_label == 'dog':
+        return 2
+    elif row_label == 'bird':
+        return 3
+    elif row_label == 'person':
+        return 4
+    else:
+        None</code></pre>
+ <p>Then,generate data files by running following commands in "C:\tensorflow1\models\research\object_detection" folder:</p>
+ 
+  <pre><code>python generate_tfrecord.py --csv_input=images\train_labels.csv --image_dir=images\train --output_path=train.record
+python generate_tfrecord.py --csv_input=images\test_labels.csv --image_dir=images\test --output_path=test.record</code></pre>
+
+<h3>7. Edit label map and configure training config</h3>
+<p>Edit "C:\tensorflow1\models\research\object_detection\training\labelmap.pbtxt" with a text editor.</p>
+
+
+ <pre><code>item {
+  id: 1
+  name: '200TL'
+}
+
+item {
+  id: 2
+  name: '5TL'
+}</code></pre>
+
+To:
+
+ <pre><code>item {
+  id: 1
+  name: 'cat'
+}
+
+item {
+  id: 2
+  name: 'dog'
+}
+item {
+  id: 3
+  name: 'bird'
+}
+item {
+  id: 4
+  name: 'person'
+}</code></pre>
+
+<p>After that edit "C:\tensorflow1\models\research\object_detection\training\faster_rcnn_inception_v2_pets.config" file with a text editor to configure training.</p>
+
+<p>a. Line 9 - Change num_classes to the number of objects you want to detect.For example; cat,dog,bird and person "num_classes:4" </p>
+<p>b. Line 110 - Change fine_tune_checkpoint:
+ <pre><code>
+fine_tune_checkpoint: "C:/tensorflow1/models/research/object_detection/faster_rcnn_inception_v2_coco_2018_01_28/model.ckpt"</code></pre>
+</p>
+<p>c. Line 126-128 - Change some variables in the train_input_reader section:
+ <pre><code>
+train_input_reader: {
+  tf_record_input_reader {
+    input_path: "C:/tensorflow1/models/research/object_detection/train.record"
+  }
+  label_map_path: "C:/tensorflow1/models/research/object_detection/training/labelmap.pbtxt"
+}
+</code></pre>
+</p>
+<p>d. Line 140-142 - Change some variables in the eval_input_reader section:
+ <pre><code>
+  tf_record_input_reader {
+    input_path: "C:/tensorflow1/models/research/object_detection/test.record"
+  }
+  label_map_path: "C:/tensorflow1/models/research/object_detection/training/labelmap.pbtxt"
+  shuffle: false
+  num_readers: 1
+}
+</code></pre>
+</p>
+
+<p>e. Line 132 -  Change num_examples to the number of images you have in the "C:\tensorflow1\models\research\object_detection\images\test" folder:
+<code>num_examples: 89</code>
+</p>
+
+<p>f. Save your file and exit.</p>
+
+<h3>8. Run the train.py</h3>
+
+<p>If you use a newer version of TensorFlow ,train.py file is located in C:\tensorflow1\models\research\object_detection\legacy" folder. You can copy it to object_detection folder.</p>
+
+<p>Let's run train.py! Run the following command from "C:\tensorflow1\models\research\object_detection" folder:</p>
+<pre><code>python train.py --logtostderr --train_dir=training/ --pipeline_config_path=training/faster_rcnn_inception_v2_pets.config
+</code></pre>
+
+<p>When training begins, it will look like this:</p>
+<div><img src="https://github.com/maacofficial/tensorflow-train-object-detection-classiffier-tutorial/blob/master/assets/screenshot.png">
+</div>
+
+<h3>9. Export inference graph</h3>
+
+<p>When training is completed,we generate inference graph file(.pb).Change "XXXX" with your highest number in your "C:\tensorflow1\models\research\object_detection\training" folder. Please run the following command to generate file from "C:\tensorflow1\models\research\object_detection" folder:</p>
+<pre><code>python export_inference_graph.py --input_type image_tensor --pipeline_config_path training/faster_rcnn_inception_v2_pets.config --trained_checkpoint_prefix training/model.ckpt-XXXX --output_directory inference_graph
+</code></pre>
+
+<p>Generated file is located in "C:\tensorflow1\models\research\object_detection\inference_graph" folder.</p>
+
+<h3>10. Using own object detection classifier</h3>
+<p>If you want to detect with webcam run "Object_detection_webcam.py" that is located in "C:\tensorflow1\models\research\object_detection" folder.Before running "Object_detection_webcam.py" file ,edit "NUM_CLASSES = 2" section. Finally run following command:</p>
+<pre><code>python Object_detection_webcam.py</code></pre>
