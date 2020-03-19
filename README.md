@@ -14,4 +14,5 @@
 
 <p>You can use TensorFlow (GPU) instead of TensorFlow (CPU) changing "pip install --ignore-installed --upgrade tensorflow==1.5.0" to "pip install --ignore-installed --upgrade tensorflow-gpu==1.5.0" and you need to install CUDA and cuDNN.</p>
 
-<p>If you use GPU for training,your graphic card should meet minimum requirements. Also yuo should have Nvidia GPU for trainig object detection classifier with TensorFlow.</p>
+<p>If you use GPU for training,you should have Nvidia GPU for trainig object detection classifier with TensorFlow. Also your graphic card should meet minimum requirements. TensorFlow required minimum 3.5 Compute Capability for training own object detection classifier. <a href="https://developer.nvidia.com/cuda-gpus" target="_blank">Compute Capability List For Each Graphic Card</a></p>
+<p>If your graphic card is medium level, it take about 3 hours.</p>
