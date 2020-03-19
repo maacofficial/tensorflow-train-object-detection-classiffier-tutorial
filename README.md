@@ -28,6 +28,8 @@
 
 <h3>2.Create TensorFlow directory</h3>
 
+İf you don't want to train another version of TensorFlow, you can download this repository directly from <a href="https://www.anaconda.com/distribution/#download-section" target="_blank">here</a>. And continue from third step.
+
 <p>2.1. Create folder in C:/ that named "tensorflow1". This directory will include our models,object_detection and training folder. We will work in "tensorflow1" directory.</p>
 
 <p>2.2. Download TensorFlow models repository from above links. We use TensorFlow 1.5 version in this guide.</p>
