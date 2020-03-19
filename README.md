@@ -1,5 +1,5 @@
 
-<h1>How to train own object detection classifier using TensorFlow (CPU) on Windows 10</h1>
+<h1>How to train own object detection classifier using TensorFlow on Windows 10</h1>
 
 
 <a href="https://www.youtube.com/watch?v=ahh9aTrlR54" target="_blank"><img src="http://i3.ytimg.com/vi/Wp9VDu7cpyk/maxresdefault.jpg" alt="How to train own object detection classifier using Tensorflow (CPU) on Windows 10"></a>
@@ -10,9 +10,95 @@
 <p>Also i published a YouTube video for this tutorial.</p>
 
 
-<h3>Statement</h3>
+<h2>Statement</h2>
 
 <p>You can use TensorFlow (GPU) instead of TensorFlow (CPU) changing "pip install --ignore-installed --upgrade tensorflow==1.5.0" to "pip install --ignore-installed --upgrade tensorflow-gpu==1.5.0" and you need to install CUDA and cuDNN.</p>
 
 <p>If you use GPU for training,you should have Nvidia GPU for trainig object detection classifier with TensorFlow. Also your graphic card should meet minimum requirements. TensorFlow required minimum 3.5 Compute Capability for training own object detection classifier. <a href="https://developer.nvidia.com/cuda-gpus" target="_blank">Compute Capability List For Each Graphic Card</a></p>
-<p>If your graphic card is medium level, it take about 3 hours.</p>
+<p>If your graphic card is medium level, it take about 3 hours. And <a href="https://www.tensorflow.org/install/source_windows#gpu" target="_blank">here</a> is a table of compatible CUDA versions with TensorFlow.</p>
+
+<h2>Steps</h2>
+
+<h3>1.Install Anaconda</h3>
+
+<p>First of all we should <a href="https://www.anaconda.com/distribution/#download-section" target="_blank">download</a> Anaconda that is a free and open-source distribution of the Python for package management.</p>
+
+<p>You can follow steps from video.</p>
+
+
+<h3>2.Create TensorFlow directory</h3>
+
+<p>2.1. Create folder in C:/ that named "tensorflow1". This directory will include our models,object_detection and training folder. We will work in "tensorflow1" directory.</p>
+
+<p>2.2. Download TensorFlow models repository from above links. We use TensorFlow 1.5 version in this guide.</p>
+
+<table>
+<thead>
+<tr>
+<th>TensorFlow version</th>
+<th>GitHub Models Repository</th>
+</tr>
+</thead>
+<tbody>
+ <tr>
+<td>TF v1.4</td>
+<td><a href="https://github.com/tensorflow/models/tree/1f34fcafc1454e0d31ab4a6cc022102a54ac0f5b">https://github.com/tensorflow/models/tree/1f34fcafc1454e0d31ab4a6cc022102a54ac0f5b</a></td>
+</tr>
+<tr>
+<td>TF v1.5</td>
+<td><a href="https://github.com/tensorflow/models/tree/d90d5280fea4a5303affc1e28af505d8292d84b8">https://github.com/tensorflow/models/tree/d90d5280fea4a5303affc1e28af505d8292d84b8</a></td>
+</tr>
+ <tr>
+<td>TF v1.6</td>
+<td><a href="https://github.com/tensorflow/models/tree/4c05414826e87f3b8ef0534862748e4b7fcd1ec7">https://github.com/tensorflow/models/tree/4c05414826e87f3b8ef0534862748e4b7fcd1ec7</a></td>
+</tr>
+<tr>
+<td>TF v1.7</td>
+<td><a href="https://github.com/tensorflow/models/tree/adfd5a3aca41638aa9fb297c5095f33d64446d8f">https://github.com/tensorflow/models/tree/adfd5a3aca41638aa9fb297c5095f33d64446d8f</a></td>
+</tr>
+<tr>
+<td>TF v1.8</td>
+<td><a href="https://github.com/tensorflow/models/tree/abd504235f3c2eed891571d62f0a424e54a2dabc">https://github.com/tensorflow/models/tree/abd504235f3c2eed891571d62f0a424e54a2dabc</a></td>
+</tr>
+<tr>
+<td>TF v1.9</td>
+<td><a href="https://github.com/tensorflow/models/tree/d530ac540b0103caa194b4824af353f1b073553b">https://github.com/tensorflow/models/tree/d530ac540b0103caa194b4824af353f1b073553b</a></td>
+</tr>
+<tr>
+<td>TF v1.10</td>
+<td><a href="https://github.com/tensorflow/models/tree/b07b494e3514553633b132178b4c448f994d59df">https://github.com/tensorflow/models/tree/b07b494e3514553633b132178b4c448f994d59df</a></td>
+</tr>
+<tr>
+<td>TF v1.11</td>
+<td><a href="https://github.com/tensorflow/models/tree/23b5b4227dfa1b23d7c21f0dfaf0951b16671f43">https://github.com/tensorflow/models/tree/23b5b4227dfa1b23d7c21f0dfaf0951b16671f43</a></td>
+</tr>
+<tr>
+<td>TF v1.12</td>
+<td><a href="https://github.com/tensorflow/models/tree/r1.12.0">https://github.com/tensorflow/models/tree/r1.12.0</a></td>
+</tr>
+<tr>
+<td>TF v1.13</td>
+<td><a href="https://github.com/tensorflow/models/tree/r1.13.0">https://github.com/tensorflow/models/tree/r1.13.0</a></td>
+</tr>
+<tr>
+<td>Latest version</td>
+<td><a href="https://github.com/tensorflow/models">https://github.com/tensorflow/models</a></td>
+</tr>
+</tbody>
+</table>
+<p>2.3. Extract tensorflow model repository to your "tensorflow1" directory that we have created in "C:/" and rename extracted folder to "models".</p>
+
+<p>2.4. Download "Faster-RCNN-Inception-V2-COCO" model from TensorFlow's model zoo from this <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md">link</a>.</p>
+
+<p>2.5. Extract downloaded "faster_rcnn_inception_v2_coco_2018_01_28.tar.gz" file to "C:\tensorflow1\models\research\object_detection\" folder.</p>
+
+<p>2.6. Download "Edje Electronics repository" model from this <a href="https://codeload.github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10/zip/master">link</a>.</p>
+
+<p>2.7. Extract downloaded "TensorFlow-Object-Detection-API.zip" file to "C:\tensorflow1\models\research\object_detection\" folder.</p>
+
+<p>2.8. Finally your "object_detection" folder looks like this.</p>
+
+
+
+<p>-Open your command prompt as administrator.</p>
+<p>-Than run this command: <code>conda create -n tensorflow1 pip python==3.5</code></p>
