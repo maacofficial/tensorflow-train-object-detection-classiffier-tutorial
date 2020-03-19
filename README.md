@@ -1,7 +1,7 @@
 <h1>How to train own object detection classifier using TensorFlow on Windows 10</h1>
 
 
-<a href="https://www.youtube.com/watch?v=ahh9aTrlR54" target="_blank"><img src="https://3.bp.blogspot.com/-zN9ZbZrBtVc/XJMwMUlyVDI/AAAAAAAABIM/brSGzSlHmNMIFYZdXnMZhCzEBxwZf0bfACEwYBhgL/s1600/Object%2BDetection%2BTensorflow.jpg" alt="How to train own object detection classifier using Tensorflow (CPU) on Windows 10"></a>
+<a href="https://www.youtube.com/watch?v=Wp9VDu7cpyk" target="_blank"><img src="https://3.bp.blogspot.com/-zN9ZbZrBtVc/XJMwMUlyVDI/AAAAAAAABIM/brSGzSlHmNMIFYZdXnMZhCzEBxwZf0bfACEwYBhgL/s1600/Object%2BDetection%2BTensorflow.jpg" alt="How to train own object detection classifier using Tensorflow (CPU) on Windows 10"></a>
 <p>Turkish translation of this tutorial is located in the lang folder. If you would like to add new translation for this guide.You can request.</p>
 
 <p>You can train your own object detection classifier on Windows 10,8 and 7. This repository written with TensorFlow 1.5.0 version. If you try with newer version of TensorFlow and different tensorflow models version, you can receive too many errors.</p>
