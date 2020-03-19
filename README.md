@@ -132,5 +132,8 @@ Then run the following commands:
 In this step we should download "LabelImg" tool to label images from <a href="https://tzutalin.github.io/labelImg/">here</a>.
 
 
-<h3>6. Create training data</h3>
+<h3>6. Generate training record</h3>
+
+First we should convert images xml data to csv. To do this:
+<pre><code>(tensorflow1) C:\tensorflow1\models\research\object_detection>python xml_to_csv.py</code></pre>
 
