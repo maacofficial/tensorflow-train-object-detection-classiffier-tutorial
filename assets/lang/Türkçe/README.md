@@ -27,7 +27,7 @@
 
 <h3>2.TensorFlow Klasörünü Oluşturma</h3>
 
-Eğer farklı bir TensorFlow kütüphanesiyle çalışmak istemiyorsanız, direk olarak bu projeyi indirip çıkartabilirsiniz. <a href="https://www.anaconda.com/distribution/#download-section" target="_blank">Bu linkten</a>. Ve bir sonraki adıma geçelim.
+Eğer farklı bir TensorFlow kütüphanesiyle çalışmak istemiyorsanız, direk olarak bu projeyi indirip çıkartabilirsiniz. <a href="https://codeload.github.com/maacofficial/tensorflow-train-object-detection-classiffier-tutorial/zip/master" target="_blank">Bu linkten</a>. Ve bir sonraki adıma geçelim.
 
 <p>2.1. C:/ dizininda "tensorflow1" adında klasör oluşturalım. Bu klasör bizim model,training ve object_detection klasörlerimizi barındırıcak. Kısacası bu klasör içinde çalışacağız.</p>
 
