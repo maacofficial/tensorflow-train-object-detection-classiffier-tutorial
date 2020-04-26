@@ -1,7 +1,7 @@
 <h1>Tensorflow İle Birlikte Windows 10'da Kendi Modelimizi Eğitme</h1>
 
 
-<a href="https://www.youtube.com/watch?v=Wp9VDu7cpyk" target="_blank"><img src="https://3.bp.blogspot.com/-zN9ZbZrBtVc/XJMwMUlyVDI/AAAAAAAABIM/brSGzSlHmNMIFYZdXnMZhCzEBxwZf0bfACEwYBhgL/s1600/Object%2BDetection%2BTensorflow.jpg" alt="How to train own object detection classifier using Tensorflow (CPU) on Windows 10"></a>
+<a href="https://youtu.be/ZuG-k__yFrc" target="_blank"><img src="https://3.bp.blogspot.com/-zN9ZbZrBtVc/XJMwMUlyVDI/AAAAAAAABIM/brSGzSlHmNMIFYZdXnMZhCzEBxwZf0bfACEwYBhgL/s1600/Object%2BDetection%2BTensorflow.jpg" alt="How to train own object detection classifier using Tensorflow (CPU) on Windows 10"></a>
 <p>Eğer destek olmak için yeni bir çeviri eklemek isterseniz istek oluşturabilirsiniz.</p>
 
 <p>Kendi modelinizi Windows 10/8 ve 7 de eğitebilirsiniz. Bu proje Tensorflow 1.5 sürümü kullanılarak hazırlanmıştır. Eğer siz farklı bir sürümle yapmak isterseniz uyumluluk sorunundan dolayı hatalarla karşılaşabilirsiniz.</p>
