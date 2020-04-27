@@ -1,7 +1,7 @@
 <h1>How to train own object detection classifier using TensorFlow on Windows 10</h1>
 
 
-<a href="https://www.youtube.com/watch?v=Wp9VDu7cpyk" target="_blank"><img src="https://3.bp.blogspot.com/-zN9ZbZrBtVc/XJMwMUlyVDI/AAAAAAAABIM/brSGzSlHmNMIFYZdXnMZhCzEBxwZf0bfACEwYBhgL/s1600/Object%2BDetection%2BTensorflow.jpg" alt="How to train own object detection classifier using Tensorflow (CPU) on Windows 10"></a>
+<a href="https://youtu.be/ZuG-k__yFrc" target="_blank"><img src="https://3.bp.blogspot.com/-zN9ZbZrBtVc/XJMwMUlyVDI/AAAAAAAABIM/brSGzSlHmNMIFYZdXnMZhCzEBxwZf0bfACEwYBhgL/s1600/Object%2BDetection%2BTensorflow.jpg" alt="How to train own object detection classifier using Tensorflow (CPU) on Windows 10"></a>
 <p>Turkish translation of this tutorial is located in the lang folder. If you would like to add new translation for this guide.You can request.</p>
 
 <p>You can train your own object detection classifier on Windows 10,8 and 7. This repository written with TensorFlow 1.5.0 version. If you try with newer version of TensorFlow and different tensorflow models version, you can receive too many errors.</p>
@@ -27,7 +27,7 @@
 
 <h3>2.Create TensorFlow directory</h3>
 
-If you don't want to train another version of TensorFlow, you can download this repository directly from <a href="https://www.anaconda.com/distribution/#download-section" target="_blank">here</a>. And continue from third step.
+If you don't want to train another version of TensorFlow, you can download this repository directly from <a href="https://codeload.github.com/maacofficial/tensorflow-train-object-detection-classiffier-tutorial/zip/master" target="_blank">here</a>. And continue from third step.
 
 <p>2.1. Create folder in C:/ that named "tensorflow1". This directory will include our models,object_detection and training folder. We will work in "tensorflow1" directory.</p>
 
@@ -104,7 +104,7 @@ If you don't want to train another version of TensorFlow, you can download this 
 
 <h3>3. Create and Set up Anaconda Virtual Environment</h3>
 <p>3.1 Open your command prompt as administrator.</p>
-<p>3.2 Than run this command: <code>C:\>conda create -n tensorflow1 pip python==3.5</code></p>
+<p>3.2 Than run this command: <code>C:\>conda create -n tensorflow1 pip python=3.5</code></p>
 <p><code>C:\>conda activate tensorflow1</code></p>
 <p>3.3 Install TensorFlow 1.5 version: <code>C:\>pip install --ignore-installed --upgrade tensorflow==1.5.0</code></p>
 <p> If you want to install TensorFlow GPU 1.5 version: <code>C:\>pip install --ignore-installed --upgrade tensorflow-gpu==1.5.0</code></p>
